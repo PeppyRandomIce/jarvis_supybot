@@ -1,0 +1,249 @@
+/msg Jarvis identify steven_saus llama
+
+
+_ messageparser add "[Jj]arvis [Mm]ake*" "echo Do it yourself, I'm busy with important things.  Like napping."
+_ messageparser add "^\((.+)\) [Hh]ello [Jj]arvis*" "echo Hello, $1!"
+_ messageparser add "^\((.+)\) [Hh]i [Jj]arvis*" "echo Hello, $1!"
+
+_ messageparser add "^\((.+)\) .+ mod on*" "echo $1, if you need a moderator, try using /modreq to request their attention."
+_ messageparser remove "^\((.+)\) .+ mod on*"
+
+_ messageparser add "^\((.+)\) .+[A-Z]+ [A-Z][A-Z]*" "echo Watch the caps, please $1."
+_ messageparser remove "^\((.+)\) .+[A-Z]+ [A-Z][A-Z]*"
+
+_ messageparser add "^\((.+)\) .+[A-Z]{3,} [A-Z][A-Z]*" "echo Watch the caps, please $1."
+_ messageparser remove "^\((.+)\) .+[A-Z]{3,} [A-Z][A-Z]+*"
+
+_ messageparser add "[Tt]hank [Yy]ou [Jj]arvis" "echo You're very welcome."
+
+_ messageparser add "^\((.+)\) *[Hh]ow.+[Bb]reak [Tt]hings*" "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
+_ messageparser add "^\((.+)\) *[Ww]hy.+[Gg]uest*"  "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
+_ messageparser add "^\((.+)\) *[Hh]ow.+[Bb]reak [Bb]locks*" "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
+
+_messageparser add "[wW]ho [iI]s [Jj]arvis" "echo Jarvis is your (unofficial) helpful friend. He also logs what you tell him.  He will not serve you booze."
+
+_ messageparser add "^\((.+)\) [Jj]arvis [Hh]elp*"  "echo $1, help with chest shops, towny, chatting, and locks can all be found at http://bit.ly/mmc_wiki or http://bit.ly/mmc_steve"
+
+
+_ messageparser add "^\((.+)\) *[Hh]ow.+[Vv]ote*"  "echo $1, you can vote at these three sites for 50z each: http://bit.ly/XolKTC and http://bit.ly/XolOTg and http://bit.ly/XolPqw"
+
+_ messageparser add "^\((.+)\) *[Jj]arvis.+[Hh]ow.+[Bb]uild*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
+_ messageparser add "^\((.+)\) *[Jj]arvis.+[Hh]ow.+[Mm]ake*"  "echo $1, I'm not sure. You can search thWhye Minecraft wiki at http://bit.ly/XooD6O"
+
+
+look into eggdrop tcl
+
+TODO
+
+How do i build []
+How to get promoted
+why am I a serf
+The Master Has Arrived.  Do You Hear The Drums?
+so how do i get member?
+how do you get a town
+jarvis give me []
+jarvis who am i
+jarvis, make me
+i love you jarvis
+bye jarvis
+night jarvis
+bot jarvis ?
+
+Change caps detection to over 4 chars
+
+    Are there forums?:
+    Are there forums?
+    Is there forums?
+    Is there a forum site?
+    Where do I sign up?
+    Where can I sign up?
+
+    Donations:
+    How can I donate?
+    Can I donate?
+    How do I donate?
+    How would I donate?
+    Should I donate?
+    Where do I donate?
+
+    I can't build:
+    How do I build?
+    I can't build?
+    Where can I build?
+    Where should I build?
+    can I build?
+    How can I build?
+    Why can't I build?
+
+    Can I have mod/durp questions:
+    Can I have mod?
+    Can I get mod?
+    How do I get mod?
+    How can I get mod?
+    How do I apply for mod?
+    Can I apply for mod?
+    Can I have op?
+    Can I apply for op?
+    Can I get op?
+    Can I be op?
+    Can I get items spawned?
+    Can I have gamemode?
+    Can I have game mode?
+    Can I have gm?
+    Can I get gm?
+    Can I get gamemode?
+    Can I get game mode?
+    Can someone spawn me items?
+    Can I be staff?
+
+    I am stuck:
+    I am stuck.
+    I am stuck in a hole.
+    How do I get out?
+    How do I get out of this hole?
+    I am stuck in adv world.
+    I can't get out of adv world
+    I am stuck in adventure world.
+    I can't get out of adventure world.
+    Can a mod teleport me out of adv world?
+    Can I get a tp out of adv world?
+    Can I get a teleport out of adventure world?
+
+    Where can I report a griefer/hacker?:
+    Where can I report a hacker?
+    Where can I report a grief?
+    Where can I report grief?
+    Where can I report an exploiter?
+    Where can I report something?
+    Can I report something?
+    How do I report someone?
+    How can I report someone?
+    Where can I report someone?
+
+    How do I make money/ economy questions:
+    How do I make money?
+    How can I make money?
+    How can I sell things?
+    Where can I sell stuff?
+    Where can I sell things?
+    Where can I sell (lapis, redstone, gold, ghast tear, ghast tears, cake?)
+    Can I sell stuff?
+    Can I sell items?
+    How do I see my money?
+    How can I see my money?
+    Where can I buy stuff?
+    Where can I buy (lapis, redstone, gold, ghast tear, ghast tears, cake?)
+
+    How do I get to other worlds?:
+    How do I get out of portal world?
+    How do I get out of p world?
+    How can I get out of portal world?
+    How can I get out of p world?
+    Where is pve?
+    Where is HC?
+    Where is creative?
+    How do I get to (pve, hardcore, hc, creative, C,?)
+
+    Stealing/griefing/pvp questions:
+    Can I steal?
+    Can I grief?
+    Can I steal things?
+    Can I steel from chests?
+    Can I pvp?
+    Is pvp allowed?
+    Is fighting allowed?
+    Where can I pvp?
+    Where can I fight?
+    Can I pvp?
+    Can I fight?
+    Can I pvp people?
+    Can I fight people?
+    Can I grief in the wilderness?
+    Can I grief anywhere?
+    Where can I grief?
+    Is stealing allowed?
+    Where can I steal?
+    Is minor grief allowed?
+    Can I grief to get to a chest?
+    Can I grief to get in a house?
+
+    Can I use mods?:
+    What mods can I use?
+    Can I use mods?
+    Can I use xray?
+    Is mods allowed?
+    Are mods allowed?
+    Is mini-map allowed?
+    Is minimap allowed?
+    Are minimaps allowed?
+    What mods can I use?
+    Can I use any mods?
+    What mods are allowed?
+    Is flymod allowed?
+    Can I fly?
+    Is flying allowed?
+
+    Where can I vote?:
+    Can I vote?
+    Where can I vote?
+    Where should I vote?
+    How do I vote?
+
+    Technical questions:
+    Why am I lagging?
+    How can I stop lagging?
+    Why is it lagging?
+
+    Is there staff present?:
+    Is there any mods online?
+    Is an admin online?
+    Are any staff online?
+    Are any mods online?
+    Is a mod online? 
+
+I can travel through time at the exceptional rate of one second per second.
+crhyoyo, Yesterday at 10:45 PM Report
+Reply
+crhyoyo Golden oldie
+
+    Gold Donator
+
+Start a Conversation
+
+Member Since:
+    Dec 15, 2012
+
+New
+
+    Setting home:
+    How do I set home?
+    Can I set home?
+    Where can I set home?
+    How can I set home?
+
+
+NOT WORKING
+
+
+http://mcserverlist.net/servers/4dd64d914e2e6706a100001f
+http://bit.ly/XolKTC
+
+
+https://minestatus.net/247-myminecraft-com-towny-economy-antigrief-no-whitelist
+http://bit.ly/XolOTg
+
+
+http://www.planetminecraft.com/server/myminecraft---survival-towny-creative-/vote/
+http://bit.ly/XolPqw
+
+http://stevesaus.com/myminecraft.html
+
+ban appeal  http://myminecraft.com/threads/ingame-rules-and-info.59/
+
+_ messageparser remove "^\((.+)\) Hello Jarvis*" 
+
+messageparser remove "^\(+\)[A-Z]+ [A-Z]+" Jarvis
+
+messageparser add "thank you" "You're very welcome."
+
+
