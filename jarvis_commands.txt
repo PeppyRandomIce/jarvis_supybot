@@ -1,71 +1,126 @@
-/msg Jarvis identify steven_saus llama
+IRC COMMANDS
+
+kick [<channel>] <nick>[, <nick>, ...] [<reason>]
+herald add [<channel>] <user|nick> <msg>
+scheduler repeat <name> <seconds> <command>
+
+POSSIBLE NICK PROTECTION?
+herald add #myminecraft.com stevensaus [kick #myminecraft.com stevensaus]
+herald add #myminecraft.com stevesaus [kick #myminecraft.com stevesaus]
+herald add #myminecraft.com steven-saus [kick #myminecraft.com steven-saus]
+herald add #myminecraft.com steven_saus_ [kick #myminecraft.com steven_saus_]
+herald add #myminecraft.com Jarvis_ [kick #myminecraft.com Jarvis_]
+
+_ messageparser add "^\(steven_saus\) *[Jj]arvis kick (.+)" "kick #myminecraft.com $1"
 
 
+
+
+NESTED COMMANDS
+Supybot allows nested commands, in other words, you can pass the result of a command to another command as a parameter. What does this allow then, though, apart from the obvious bragging rights? For example, if you want to restore a configuration entry to the default value, you can type:
+config reply.withNickPrefix [config default reply.withNickPrefix]
+Obviously, that wasn’t very neat. They could’ve included a config reset <key> command instead, for example. But I’m sure you can figure out something more useful to do with this, as a homework ;-)
+
+###################################################################### Greetings
 _ messageparser add "[Jj]arvis [Mm]ake*" "echo Do it yourself, I'm busy with important things.  Like napping."
+_ messageparser add "^\((.+)\) *[Jj]arvis .+[Mm]ake*" "echo Do it yourself, I'm busy with important things.  Like napping."
+_ messageparser add "^\((.+)\) *[Jj]arvis,.+[Mm]ake*" "echo Survival is the ability to swim in strange water.  Don't drown, $1."
+_ messageparser add "^\((.+)\) *[Jj]arvis .+[Gg]ive*" "echo There ain't no such thing as a free lunch, $1."
+_ messageparser add "^\((.+)\) *[Jj]arvis,.+[Gg]ive*" "echo I'm sorry, $1.  I'm afraid I can't do that.  Daisy, daisy, give me your answer do."
+_ messageparser add "^\((.+)\) *[Jj]arvis.+[Ss]erve*" "echo $1, you need to show me your ID.  With social security number.  And credit card information."
+_ messageparser add "^\((.+)\) sudo.+[Jj]arvis*" "echo And how can this be?  For $1 *is* the Kwisatz Haderach... bazinga."
+
 _ messageparser add "^\((.+)\) [Hh]ello [Jj]arvis*" "echo Hello, $1!"
 _ messageparser add "^\((.+)\) [Hh]i [Jj]arvis*" "echo Hello, $1!"
+_ messageparser add "[Hh]i [Jj]arvis" "echo Hello!"
+_ messageparser add "^\((.+)\) [Hh]ola [Jj]arvis*" "echo Hello, $1!"
+_ messageparser remove "[Tt]hank [Yy]ou [Jj]arvis" "echo You're very welcome."
+_ messageparser remove "[wW]ho [iI]s [Jj]arvis"
+_ messageparser add "[Tt]hank [Yy]ou.+[Jj]arvis" "echo You're very welcome."
+_ messageparser add "[Tt][Yy].+[Jj]arvis" "echo You're very welcome."
+_ messageparser add "[wW]ho [iI]s [Jj]arvis" "echo Jarvis is your (unofficial) helpful friend. Try asking Jarvis for help."  
+_ messageparser add "[Ww]ho [Ii]s [Jj]arvis" "echo Jarvis also logs general chat.  He groks in fullness.  And will not serve you booze."
+_ messageparser add "^\((.+)\) .*bye!*" "echo Goodbye, $1!"
+_ messageparser add "^\((.+)\) .*[Nn]ight.+[Jj]arvis*" "echo Good night, $1!"
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Bb]ye.+[Jj]arvis*" "echo Good bye, $1!"
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Ll]ove.+[Jj]arvis*" "echo I'm sorry, $1, you're not my type. But we can still be friends."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Ff]uck.+[Jj]arvis*" "echo Please keep your fantasies to a private channel, $1."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Bb]ot.+[Jj]arvis*" "echo Little puppet made of pine, awake. The gift of life is thine, $1."
+_ messageparser remove #myminecraft.com "^\((.+)\) .*[Jj]arvis.+[Bb]ot*" "echo $1, to become a real boy, you must prove yourself brave, truthful, and unselfish."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Ss]hut.+[Jj]arvis*" "echo $1, those words, you keep saying them.  I do not think they mean what you think they mean."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Jj]arvis.+[Ss]hut*" "echo $1, I'm rubber, you're glue, it bounces off me and sticks to you."
 
+
+
+this server sucks
+
+rape
+
+###################################################################### Functions
+
+_ messageparser add "^\((.+)\) calc (.*)" "math calc $2"
+
+################################################################## Mods (add-on)
+
+#_ messageparser add "^\((.+)\) .*mods allowed" "$1, "
+#_ messageparser add "^\((.+)\) .*mods can [Ii] use"
+#_ messageparser add "^\((.+)\) .+mini[.*]map okay"
+#_ messageparser add "^\((.+)\) .+mini[.*]map allowed"
+
+    Can I fly?
+    Is flying allowed?
+
+
+
+######################################################################## Modreqs
 _ messageparser add "^\((.+)\) .+ mod on*" "echo $1, if you need a moderator, try using /modreq to request their attention."
 _ messageparser remove "^\((.+)\) .+ mod on*"
 
+[Hh]ow.+[Gg]et [Mm]od
+[Cc]an.+[Bb]e [Mm]od
+[Cc]an.+[Bb]e [Oo]p
+[Mm]ake me mod
+[Mm]ake me op
+[Rr]eport.+[Gg]rief
+[Rr]eport.+[Hh]acker
+.+[Ss]taff [Oo]n
+
+
+####################################################################### Warnings
 _ messageparser add "^\((.+)\) .+[A-Z]+ [A-Z][A-Z]*" "echo Watch the caps, please $1."
 _ messageparser remove "^\((.+)\) .+[A-Z]+ [A-Z][A-Z]*"
 
 _ messageparser add "^\((.+)\) .+[A-Z]{3,} [A-Z][A-Z]*" "echo Watch the caps, please $1."
 _ messageparser remove "^\((.+)\) .+[A-Z]{3,} [A-Z][A-Z]+*"
 
-_ messageparser add "[Tt]hank [Yy]ou [Jj]arvis" "echo You're very welcome."
 
+################################################################ Getting started
 _ messageparser add "^\((.+)\) *[Hh]ow.+[Bb]reak [Tt]hings*" "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
 _ messageparser add "^\((.+)\) *[Ww]hy.+[Gg]uest*"  "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
 _ messageparser add "^\((.+)\) *[Hh]ow.+[Bb]reak [Bb]locks*" "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
-
-_messageparser add "[wW]ho [iI]s [Jj]arvis" "echo Jarvis is your (unofficial) helpful friend. He also logs what you tell him.  He will not serve you booze."
-
-_ messageparser add "^\((.+)\) [Jj]arvis [Hh]elp*"  "echo $1, help with chest shops, towny, chatting, and locks can all be found at http://bit.ly/mmc_wiki or http://bit.ly/mmc_steve"
+_ messageparser add "^\((.+)\) *[Hh]ow.+[Mm]ember*" "echo $1, you become a member by typing /rules and following the directions.  You will need to do this in each of our worlds."
 
 
+################################################################### General Help
+_ messageparser add "^\((.+)\) [Jj]arvis [Hh]elp*"  "echo $1, help with chest shops, towny, chatting, and locks can all be found at http://bit.ly/mmc_wiki or http://bit.ly/mmc_steve""
 _ messageparser add "^\((.+)\) *[Hh]ow.+[Vv]ote*"  "echo $1, you can vote at these three sites for 50z each: http://bit.ly/XolKTC and http://bit.ly/XolOTg and http://bit.ly/XolPqw"
+    Where can I vote?:
+    Can I vote?
+    Where can I vote?
+    Where should I vote?
+    How do I vote?
+    Setting home:
+    How do I set home?
+    Can I set home?
+    Where can I set home?
+    How can I set home?
 
+
+####################################################################### Building
 _ messageparser add "^\((.+)\) *[Jj]arvis.+[Hh]ow.+[Bb]uild*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
-_ messageparser add "^\((.+)\) *[Jj]arvis.+[Hh]ow.+[Mm]ake*"  "echo $1, I'm not sure. You can search thWhye Minecraft wiki at http://bit.ly/XooD6O"
-
-
-look into eggdrop tcl
-
-TODO
-
-How do i build []
-How to get promoted
-why am I a serf
-The Master Has Arrived.  Do You Hear The Drums?
-so how do i get member?
-how do you get a town
-jarvis give me []
-jarvis who am i
-jarvis, make me
-i love you jarvis
-bye jarvis
-night jarvis
-bot jarvis ?
-
-Change caps detection to over 4 chars
-
-    Are there forums?:
-    Are there forums?
-    Is there forums?
-    Is there a forum site?
-    Where do I sign up?
-    Where can I sign up?
-
-    Donations:
-    How can I donate?
-    Can I donate?
-    How do I donate?
-    How would I donate?
-    Should I donate?
-    Where do I donate?
-
+_ messageparser add "^\((.+)\) *[Jj]arvis.+[Hh]ow.+[Mm]ake*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
+_ messageparser add "^\((.+)\) *[Hh]ow.+[Dd][Oo].+[Mm]ake*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
+_ messageparser add "^\((.+)\) *[Hh]ow.+[Dd][Oo].+[Bb]uild*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
     I can't build:
     How do I build?
     I can't build?
@@ -75,51 +130,13 @@ Change caps detection to over 4 chars
     How can I build?
     Why can't I build?
 
-    Can I have mod/durp questions:
-    Can I have mod?
-    Can I get mod?
-    How do I get mod?
-    How can I get mod?
-    How do I apply for mod?
-    Can I apply for mod?
-    Can I have op?
-    Can I apply for op?
-    Can I get op?
-    Can I be op?
-    Can I get items spawned?
-    Can I have gamemode?
-    Can I have game mode?
-    Can I have gm?
-    Can I get gm?
-    Can I get gamemode?
-    Can I get game mode?
-    Can someone spawn me items?
-    Can I be staff?
 
-    I am stuck:
-    I am stuck.
-    I am stuck in a hole.
-    How do I get out?
-    How do I get out of this hole?
-    I am stuck in adv world.
-    I can't get out of adv world
-    I am stuck in adventure world.
-    I can't get out of adventure world.
-    Can a mod teleport me out of adv world?
-    Can I get a tp out of adv world?
-    Can I get a teleport out of adventure world?
+########################################################################## Ranks
+_ messageparser add "^\((.+)\) *[Ww]hy.+[Ss]erf*"  "echo $1, serf is the first rank on our server. You get ranks based on how long you play on this server."
+_ messageparser add "^\((.+)\) *[Hh]ow.+[Pp]romoted*"  "echo $1, You get a higher rank based on how long you play on this server.  I'm not sure how long it takes for each rank."
+How to get promoted
 
-    Where can I report a griefer/hacker?:
-    Where can I report a hacker?
-    Where can I report a grief?
-    Where can I report grief?
-    Where can I report an exploiter?
-    Where can I report something?
-    Can I report something?
-    How do I report someone?
-    How can I report someone?
-    Where can I report someone?
-
+################################################################### Making Money
     How do I make money/ economy questions:
     How do I make money?
     How can I make money?
@@ -134,17 +151,29 @@ Change caps detection to over 4 chars
     Where can I buy stuff?
     Where can I buy (lapis, redstone, gold, ghast tear, ghast tears, cake?)
 
-    How do I get to other worlds?:
-    How do I get out of portal world?
-    How do I get out of p world?
-    How can I get out of portal world?
-    How can I get out of p world?
-    Where is pve?
-    Where is HC?
-    Where is creative?
-    How do I get to (pve, hardcore, hc, creative, C,?)
 
-    Stealing/griefing/pvp questions:
+########################################################################## Towny
+
+
+######################################################################### Forums
+
+    Are there forums?:
+    Are there forums?
+    Is there forums?
+    Is there a forum site?
+    Where do I sign up?
+    Where can I sign up?
+
+###################################################################### Donations
+    How can I donate?
+    Can I donate?
+    How do I donate?
+    How would I donate?
+    Should I donate?
+    Where do I donate?
+
+
+########################################################################## Grief
     Can I steal?
     Can I grief?
     Can I steal things?
@@ -167,83 +196,45 @@ Change caps detection to over 4 chars
     Can I grief to get to a chest?
     Can I grief to get in a house?
 
-    Can I use mods?:
-    What mods can I use?
-    Can I use mods?
-    Can I use xray?
-    Is mods allowed?
-    Are mods allowed?
-    Is mini-map allowed?
-    Is minimap allowed?
-    Are minimaps allowed?
-    What mods can I use?
-    Can I use any mods?
-    What mods are allowed?
-    Is flymod allowed?
-    Can I fly?
-    Is flying allowed?
 
-    Where can I vote?:
-    Can I vote?
-    Where can I vote?
-    Where should I vote?
-    How do I vote?
+############### uncategorized
+
+    Can I get items spawned?
+    Can I have gamemode?
+    Can I have game mode?
+    Can I have gm?
+    Can I get gm?
+    Can I get gamemode?
+    Can I get game mode?
+    Can someone spawn me items?
+
+    I am stuck:
+    I am stuck.
+    I am stuck in a hole.
+    How do I get out?
+    How do I get out of this hole?
+    I am stuck in adv world.
+    I can't get out of adv world
+    I am stuck in adventure world.
+    I can't get out of adventure world.
+    Can a mod teleport me out of adv world?
+    Can I get a tp out of adv world?
+    Can I get a teleport out of adventure world?
+
+    How do I get to other worlds?:
+    How do I get out of portal world?
+    How do I get out of p world?
+    How can I get out of portal world?
+    How can I get out of p world?
+    Where is pve?
+    Where is HC?
+    Where is creative?
+    How do I get to (pve, hardcore, hc, creative, C,?)
+
+
 
     Technical questions:
     Why am I lagging?
     How can I stop lagging?
     Why is it lagging?
-
-    Is there staff present?:
-    Is there any mods online?
-    Is an admin online?
-    Are any staff online?
-    Are any mods online?
-    Is a mod online? 
-
-I can travel through time at the exceptional rate of one second per second.
-crhyoyo, Yesterday at 10:45 PM Report
-Reply
-crhyoyo Golden oldie
-
-    Gold Donator
-
-Start a Conversation
-
-Member Since:
-    Dec 15, 2012
-
-New
-
-    Setting home:
-    How do I set home?
-    Can I set home?
-    Where can I set home?
-    How can I set home?
-
-
-NOT WORKING
-
-
-http://mcserverlist.net/servers/4dd64d914e2e6706a100001f
-http://bit.ly/XolKTC
-
-
-https://minestatus.net/247-myminecraft-com-towny-economy-antigrief-no-whitelist
-http://bit.ly/XolOTg
-
-
-http://www.planetminecraft.com/server/myminecraft---survival-towny-creative-/vote/
-http://bit.ly/XolPqw
-
-http://stevesaus.com/myminecraft.html
-
-ban appeal  http://myminecraft.com/threads/ingame-rules-and-info.59/
-
-_ messageparser remove "^\((.+)\) Hello Jarvis*" 
-
-messageparser remove "^\(+\)[A-Z]+ [A-Z]+" Jarvis
-
-messageparser add "thank you" "You're very welcome."
-
 
