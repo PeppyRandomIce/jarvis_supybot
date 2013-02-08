@@ -100,17 +100,18 @@ _ messageparser add #myminecraft.com "^\((.+)\) *[Ww]hy.+[Gg]uest*"  "echo $1, y
 _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Bb]reak [Bb]locks*" "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
 _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Mm]ember*" "echo $1, you become a member by typing /rules and following the directions.  You will need to do this in each of our worlds."
 _ messageparser add #myminecraft.com "^\((.+)\) [Cc]an.*t [Bb]uild" "echo $1, if you're still a guest, type /rules again and follow the directions. Otherwise, move farther away from spawn."
+_ messageparser add #myminecraft.com "^\((.+)\) *[Ww]hy [Cc]an.*t.+[Bb]uild" "echo $1, if you're still a guest, type /rules again and follow the directions. Otherwise, move farther away from spawn."
 
 ################################################################### General Help
+! NEED TO CHANGE THESE TO MYMINECRAFT.COM WIKI
+
 _ messageparser add #myminecraft.com "^\((.+)\) [Jj]arvis [Hh]elp*"  "echo $1, help with chest shops, towny, chatting, and locks can all be found at http://bit.ly/mmc_wiki or http://bit.ly/mmc_steve""
 _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Vv]ote*"  "echo $1, you can vote at these three sites for 50z each: http://bit.ly/XolKTC and http://bit.ly/XolOTg and http://bit.ly/XolPqw"
 _ messageparser add #myminecraft.com "^\((.+)\) *[Ww]here .+[Vv]ote*"  "echo $1, you can vote at these three sites for 50z each: http://bit.ly/XolKTC and http://bit.ly/XolOTg and http://bit.ly/XolPqw"
 
-    Setting home:
-    How do I set home?
-    Can I set home?
-    Where can I set home?
-    How can I set home?
+
+Setting home:
+_ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Ss]et [Hh]ome*"  "echo $1, in our PvE world you can use the /sethome command, and /home to get there.\n Also in PvE world you can use '/t TOWNNAME spawn' to teleport to a town.\n In our PvP world you have to be part of a faction, and use the /f sethome and /f home commands."
 
 
 ####################################################################### Building
@@ -144,6 +145,10 @@ _ messageparser add #myminecraft.com "[Hh]ow.+[Mm]ake.+money" "echo You can make
 _ messageparser add #myminecraft.com "^\((.+)\) .*check.* money .*[Hh]ow" "echo $1, you can check your money by typing /ec."
 _ messageparser add #myminecraft.com "^\((.+)\) .*see .*money" "echo $1, you can check your money by typing /ec."
     
+	
+! 
+_ messageparser add #myminecraft.com "^\((.+)\) [Ww]here are .*shops" "echo $1, there are player-owned shops in many of the towns in our PvE world."
+	
     How can I sell things?
     Where can I sell stuff?
     Where can I sell things?
@@ -154,6 +159,7 @@ _ messageparser add #myminecraft.com "^\((.+)\) .*see .*money" "echo $1, you can
     How can I see my money?
     Where can I buy stuff?
     Where can I buy (lapis, redstone, gold, ghast tear, ghast tears, cake?)
+
 
 
 ########################################################################## Towny
