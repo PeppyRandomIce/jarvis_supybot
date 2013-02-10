@@ -1,15 +1,23 @@
+#Add "How to get to [World Type IE skyblock, pvp, pve/survival etc..]
+# ! are things in the process of being added.
+
+
 IRC COMMANDS
 
 kick [<channel>] <nick>[, <nick>, ...] [<reason>]
 herald add [<channel>] <user|nick> <msg>
 scheduler repeat <name> <seconds> <command>
 
+
+# This doesn't work.  Dammit.
 POSSIBLE NICK PROTECTION?
 herald add #myminecraft.com stevensaus [kick #myminecraft.com stevensaus]
 herald add #myminecraft.com stevesaus [kick #myminecraft.com stevesaus]
 herald add #myminecraft.com steven-saus [kick #myminecraft.com steven-saus]
 herald add #myminecraft.com steven_saus_ [kick #myminecraft.com steven_saus_]
 herald add #myminecraft.com Jarvis_ [kick #myminecraft.com Jarvis_]
+
+### This would be great, though. 
 
 _ messageparser add #myminecraft.com "^\(steven_saus\) *[Jj]arvis kick (.+)" "kick #myminecraft.com $1"
 
