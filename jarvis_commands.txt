@@ -57,7 +57,7 @@ _ messageparser add #myminecraft.com "^\((.+)\) .*[Jj]arvis.+ [Bb]ot*" "echo $1,
 _ messageparser add #myminecraft.com "^\((.+)\) .*[Jj]arvis.+ [Rr]eal*" "echo $1, I am a real bot, yes.  I'm secure in my identity."
 _ messageparser add #myminecraft.com "^\((.+)\) .*[Ss]hut.+[Jj]arvis*" "echo $1, those words, you keep saying them.  I do not think they mean what you think they mean."
 _ messageparser add #myminecraft.com "^\((.+)\) .*[Jj]arvis.+[Ss]hut*" "echo $1, I'm rubber, you're glue, it bounces off me and sticks to you."
-
+_ messageparser add #myminecraft.com "^\((.+)\) FUCK YOU JARVIS.*" "echo $1, seriously? You're insulting a chatbot?  How sad."
 
 
 this server sucks
@@ -81,6 +81,8 @@ _ messageparser add #myminecraft.com "[Mm]ini.*[Mm]ap ([Aa]llowed|[Oo]kay)" "You
 
 
 ######################################################################## Modreqs
+! Temporarily removed whilst modreq is borked.
+
 _ messageparser add #myminecraft.com "^\((.+)\) .+ mod on*" "echo $1, if you need a moderator, try using /modreq to request their attention."
 _ messageparser remove "^\((.+)\) .+ mod on*"
 
@@ -103,19 +105,25 @@ _ messageparser remove "^\((.+)\) .+[A-Z]{3,} [A-Z][A-Z]+*"
 
 
 ################################################################ Getting started
+_ messageparser add #myminecraft.com "^\((.+)\) *apply iagree" "echo $1, don't say the password in open chat. It is a command; type the slash as well."
+
 _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Bb]reak [Tt]hings*" "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
 _ messageparser add #myminecraft.com "^\((.+)\) *[Ww]hy.+[Gg]uest*"  "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
 _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Bb]reak [Bb]locks*" "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
 _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Mm]ember*" "echo $1, you become a member by typing /rules and following the directions.  You will need to do this in each of our worlds."
 _ messageparser add #myminecraft.com "^\((.+)\) [Cc]an.*t [Bb]uild" "echo $1, if you're still a guest, type /rules again and follow the directions. Otherwise, move farther away from spawn."
 _ messageparser add #myminecraft.com "^\((.+)\) *[Ww]hy [Cc]an.*t.+[Bb]uild" "echo $1, if you're still a guest, type /rules again and follow the directions. Otherwise, move farther away from spawn."
+_ messageparser add #myminecraft.com "^\((.+)\) *[Ww]hy [Cc]an.*t.+[Bb]reak [Bb]locks" "echo $1, if you're still a guest, type /rules again and follow the directions. Otherwise, move farther away from spawn."
+_ messageparser add #myminecraft.com "^\((.+)\) *[Ww]here [Cc]an [Ii] [Bb]uild" "echo $1, you can build pretty much anywhere, just move a distance away from spawn.  Remember to not grief in our PvE and Creative worlds."
+
+
 
 ################################################################### General Help
-! NEED TO CHANGE THESE TO MYMINECRAFT.COM WIKI
-
 _ messageparser add #myminecraft.com "^\((.+)\) [Jj]arvis [Hh]elp*"  "echo $1, help with chest shops, towny, chatting, and locks can all be found at http://bit.ly/mmc_wiki or http://bit.ly/mmc_steve""
 _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Vv]ote*"  "echo $1, you can vote at these three sites for 50z each: http://bit.ly/XolKTC and http://bit.ly/XolOTg and http://bit.ly/XolPqw"
 _ messageparser add #myminecraft.com "^\((.+)\) *[Ww]here .+[Vv]ote*"  "echo $1, you can vote at these three sites for 50z each: http://bit.ly/XolKTC and http://bit.ly/XolOTg and http://bit.ly/XolPqw"
+
+_ messageparser add #myminecraft.com "^\((.+)\) *[Ww]hat is [Ii][Rr][Cc].*"  "echo $1, IRC stands for Internet Relay Chat.  There's a chat interface to the server.  You can see it on myminecraft.com under the chat tab."
 
 
 Setting home:
@@ -126,10 +134,10 @@ _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Ss]et [Hh]ome*"  "echo
 _ messageparser add #myminecraft.com "^\((.+)\) *[Jj]arvis.+[Hh]ow.+[Bb]uild*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
 _ messageparser add #myminecraft.com "^\((.+)\) *[Jj]arvis.+[Hh]ow.+[Mm]ake*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
 _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Dd][Oo].+[Mm]ake*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
-_ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Dd][Oo].+[Bb]uild*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
+_ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Dd][Oo].+[Bb]uild .+"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
 
-    How do I build?
-    I can't build?
+
+
     Where can I build?
     Where should I build?
     can I build?
@@ -139,7 +147,7 @@ _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Dd][Oo].+[Bb]uild*"  "
 
 ########################################################################## Ranks
 _ messageparser add #myminecraft.com "^\((.+)\) *[Ww]hy.+[Ss]erf*"  "echo $1, serf is the first rank on our server. You get ranks based on how long you play on this server."
-_ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Pp]romoted*"  "echo $1, You get a higher rank based on how long you play on this server.  I'm not sure how long it takes for each rank."
+_ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Pp]romoted*"  "echo $1, You get a higher rank based on how long you play on this server.  sI'm not sure how long it takes for each rank."
 How to get promoted
 
 ################################################################### Making Money
@@ -150,12 +158,15 @@ _ messageparser add #myminecraft.com "[Hh]ow.+[Gg]et.+money" "echo You can make 
 _ messageparser add #myminecraft.com "[Hh]ow.+[Mm]ake.+zinga.*" "echo You can make money by voting, donating, selling items to other players, or selling to a shop."
 _ messageparser add #myminecraft.com "[Hh]ow.+[Mm]ake.+money" "echo You can make money by voting, donating, selling items to other players, or selling to a shop."
 
+
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Ss]ell.+[Pp]layers.*" "echo $1, you can sell to players by simply giving them the item. They use the command /pay USERNAME AMOUNT to pay you."
+
 _ messageparser add #myminecraft.com "^\((.+)\) .*check.* money .*[Hh]ow" "echo $1, you can check your money by typing /ec."
 _ messageparser add #myminecraft.com "^\((.+)\) .*see .*money" "echo $1, you can check your money by typing /ec."
     
 	
-! 
-_ messageparser add #myminecraft.com "^\((.+)\) [Ww]here are .*shops" "echo $1, there are player-owned shops in many of the towns in our PvE world."
+_ messageparser add #myminecraft.com "^\((.+)\) [Ww]here are .*shops" "echo $1, there are player-owned shops in many of the towns in our PvE world.  You can find a list of towns in PvE by typing /t list, and warp to them by typing /t spawn NAMEOFTOWN."
+
 	
     How can I sell things?
     Where can I sell stuff?
@@ -163,8 +174,6 @@ _ messageparser add #myminecraft.com "^\((.+)\) [Ww]here are .*shops" "echo $1, 
     Where can I sell (lapis, redstone, gold, ghast tear, ghast tears, cake?)
     Can I sell stuff?
     Can I sell items?
-    How do I see my money?
-    How can I see my money?
     Where can I buy stuff?
     Where can I buy (lapis, redstone, gold, ghast tear, ghast tears, cake?)
 
@@ -172,6 +181,13 @@ _ messageparser add #myminecraft.com "^\((.+)\) [Ww]here are .*shops" "echo $1, 
 
 ########################################################################## Towny
 
+can i join a town
+how do I start a town
+can i start a town
+
+How do i make a town  
+
+http://myminecraft.com/wiki/towny-hub/
 
 ######################################################################### Forums
 
