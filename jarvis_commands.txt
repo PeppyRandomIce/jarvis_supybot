@@ -8,6 +8,8 @@ kick [<channel>] <nick>[, <nick>, ...] [<reason>]
 herald add [<channel>] <user|nick> <msg>
 scheduler repeat <name> <seconds> <command>
 
+SUBSTITUTE [COLOR FG [BG]] FOR ECHO
+
 
 # This doesn't work.  Dammit.
 POSSIBLE NICK PROTECTION?
@@ -19,10 +21,11 @@ herald add #myminecraft.com Jarvis_ [kick #myminecraft.com Jarvis_]
 
 ### This would be great, though. 
 
-_ messageparser add #myminecraft.com "^\(steven_saus\) *[Jj]arvis kick (.+)" "kick #myminecraft.com $1"
+This could be faked - but probably only by someone who has appropriate perms.
+_ messageparser remove #myminecraft.com "^\(PeppyRandomIce\) Jarvis, opinion on (.+)?" "color red Kick $1, Peppy!"
 
-
-
+THIS FAILS BECAUSE MMC doesn't have op
+_ messageparser add #myminecraft.com "HADOKEN!" "kick #myminecraft.com SteveWillKickMeTesting"
 
 NESTED COMMANDS
 Supybot allows nested commands, in other words, you can pass the result of a command to another command as a parameter. What does this allow then, though, apart from the obvious bragging rights? For example, if you want to restore a configuration entry to the default value, you can type:
@@ -38,7 +41,7 @@ _ messageparser add #myminecraft.com "^\((.+)\) *[Jj]arvis [Gg]ive*" "echo There
 _ messageparser add #myminecraft.com "^\((.+)\) *[Jj]arvis, [Gg]ive*" "echo I'm sorry, $1.  I'm afraid I can't do that.  Daisy, daisy, give me your answer do."
 
 _ messageparser add #myminecraft.com "^\((.+)\) *[Jj]arvis.+[Ss]erve*" "echo $1, you need to show me your ID.  With social security number.  And credit card information."
-_ messageparser add #myminecraft.com "^\((.+)\) sudo.+[Jj]arvis*" "echo And how can this be?  For $1 *is* the Kwisatz Haderach... bazinga."
+_ messageparser add #myminecraft.com "^\((.+)\) sudo.+[Jj]arvis*" "color red And how can this be?  For $1 *is* the Kwisatz Haderach... bazinga."
 
 _ messageparser add #myminecraft.com "^\((.+)\) ([Hh]ello|[Hh]i|[Hh]ola) [Jj]arvis*" "echo Hello, $1!"
 _ messageparser add #myminecraft.com "^\((.+)\) ([Tt]hank [Yy]ou|[Tt][Yy]) [Jj]arvis" "echo You're very welcome, $1."
@@ -68,6 +71,7 @@ rape
 
 _ messageparser add #myminecraft.com "^\((.+)\) calc (.*)" "math calc $2"
 
+_ messageparser add #myminecraft.com "jarvis color red" "color red blue "
 ################################################################## Mods (add-on)
 
 
@@ -100,12 +104,13 @@ _ messageparser remove "^\((.+)\) .+ mod on*"
 _ messageparser add #myminecraft.com "^\((.+)\) .+[A-Z]+ [A-Z][A-Z]*" "echo Watch the caps, please $1."
 _ messageparser remove "^\((.+)\) .+[A-Z]+ [A-Z][A-Z]*"
 
-_ messageparser add #myminecraft.com "^\((.+)\) .+[A-Z]{3,} [A-Z][A-Z]*" "echo Watch the caps, please $1."
+_ messageparser add #myminecraft.com "^\((.+)\) .+[A-Z]{3,} [A-Z][A-Z]*" "color yellow Watch the caps, please $1."
 _ messageparser remove "^\((.+)\) .+[A-Z]{3,} [A-Z][A-Z]+*"
 
 
 ################################################################ Getting started
-_ messageparser add #myminecraft.com "^\((.+)\) *apply iagree" "echo $1, don't say the password in open chat. It is a command; type the slash as well."
+_ messageparser add #myminecraft.com "^\((.+)\) *apply iagree" "color red $1, don't say the password in open chat. It is a command; type the slash as well."
+_ messageparser add #myminecraft.com "^\((.+)\) .+apply iagree" "color red $1, don't say the password in open chat."
 
 _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Bb]reak [Tt]hings*" "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
 _ messageparser add #myminecraft.com "^\((.+)\) *[Ww]hy.+[Gg]uest*"  "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
