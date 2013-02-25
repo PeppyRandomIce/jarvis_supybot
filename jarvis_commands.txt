@@ -136,10 +136,12 @@ _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Ss]et [Hh]ome*"  "echo
 
 
 ####################################################################### Building
-_ messageparser add #myminecraft.com "^\((.+)\) *[Jj]arvis.+[Hh]ow.+[Bb]uild*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
-_ messageparser add #myminecraft.com "^\((.+)\) *[Jj]arvis.+[Hh]ow.+[Mm]ake*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
-_ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Dd][Oo].+[Mm]ake*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
-_ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Dd][Oo].+[Bb]uild .+"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
+
+# Removed due to overmatches.
+_ messageparser remove #myminecraft.com "^\((.+)\) *[Jj]arvis.+[Hh]ow.+[Bb]uild*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
+_ messageparser remove #myminecraft.com "^\((.+)\) *[Jj]arvis.+[Hh]ow.+[Mm]ake*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
+_ messageparser remove #myminecraft.com "^\((.+)\) *[Hh]ow.+[Dd][Oo].+[Mm]ake*"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
+_ messageparser remove #myminecraft.com "^\((.+)\) *[Hh]ow.+[Dd][Oo].+[Bb]uild .+"  "echo $1, I'm not sure. You can search the Minecraft wiki at http://bit.ly/XooD6O"
 
 
 
@@ -158,11 +160,13 @@ How to get promoted
 ################################################################### Making Money
     How do I make money/ economy questions:
 
-_ messageparser add #myminecraft.com "[Hh]ow.+[Gg]et.+zinga.*" "echo You can make money by voting, donating, selling items to other players, or selling to a shop."
-_ messageparser add #myminecraft.com "[Hh]ow.+[Gg]et.+money" "echo You can make money by voting, donating, selling items to other players, or selling to a shop."
-_ messageparser add #myminecraft.com "[Hh]ow.+[Mm]ake.+zinga.*" "echo You can make money by voting, donating, selling items to other players, or selling to a shop."
-_ messageparser add #myminecraft.com "[Hh]ow.+[Mm]ake.+money" "echo You can make money by voting, donating, selling items to other players, or selling to a shop."
-
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Ww]hat [aA]re.+zinga.*" "color green $1, Zingas are our in-world currency in the PvE world. Teleporting to towns and buying from shops costs zingas."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Ww]hat [Ii]s.+zinga.*" "color green $1, Zingas are our in-world currency in the PvE world. Teleporting to towns and buying from shops costs zingas."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Gg]et.+zinga.*" "color green $1, you can make money by voting, donating, selling items to other players, or selling to a shop."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Gg]et.+money" "color green $1, you can make money by voting, donating, selling items to other players, or selling to a shop."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Mm]ake.+zinga.*" "color green $1, you can make money by voting, donating, selling items to other players, or selling to a shop."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Mm]ake.+money" "color green $1, you can make money by voting, donating, selling items to other players, or selling to a shop."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Ee]arn.+money" "color green $1, you can make money by voting, donating, selling items to other players, or selling to a shop."
 
 _ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Ss]ell.+[Pp]layers.*" "echo $1, you can sell to players by simply giving them the item. They use the command /pay USERNAME AMOUNT to pay you."
 
@@ -186,12 +190,19 @@ _ messageparser add #myminecraft.com "^\((.+)\) [Ww]here are .*shops" "echo $1, 
 
 ########################################################################## Towny
 
-can i join a town
-how do I start a town
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow .+[Mm]ake .+[Tt]own" "echo $1, starting a town on our server costs 3500 zingas.  There is information on the commands on our Towny wiki hub at http://bit.ly/W4KeFz"
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Cc]an .+[Mm]ake .+[Tt]own" "echo $1, starting a town on our server costs 3500 zingas.  There is information on the commands on our Towny wiki hub at http://bit.ly/W4KeFz"
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow .+[Ss]tart .+[Tt]own" "echo $1, starting a town on our server costs 3500 zingas.  There is information on the commands on our Towny wiki hub at http://bit.ly/W4KeFz"
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Cc]an .+[Ss]tart .+[Tt]own" "echo $1, starting a town on our server costs 3500 zingas.  There is information on the commands on our Towny wiki hub at http://bit.ly/W4KeFz"
+
+
+
+
 can i start a town
+How much does it cost to make a town
 
-How do i make a town  
 
+can i join a town
 http://myminecraft.com/wiki/towny-hub/
 
 ######################################################################### Forums
