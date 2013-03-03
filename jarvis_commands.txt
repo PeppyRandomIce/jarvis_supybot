@@ -48,24 +48,27 @@ _ messageparser add #myminecraft.com "^\((.+)\) ([Tt]hank [Yy]ou|[Tt][Yy]) [Jj]a
 _ messageparser add #myminecraft.com "^\((.+)\) ([Tt]hank [Yy]ou|[Tt][Yy]), [Jj]arvis" "echo You're very welcome, $1."
 
 
+#NOTE - the regexes are different, but trigger off the same thing.  That's how we do multiple lines.  DUH.
 _ messageparser add #myminecraft.com "[wW]ho [iI]s [Jj]arvis" "echo Jarvis is your (unofficial) helpful friend. Try asking Jarvis for help."  
 _ messageparser add #myminecraft.com "[Ww]ho [Ii]s [Jj]arvis" "echo Jarvis also logs general chat.  He groks in fullness.  And will not serve you booze."
+_ messageparser add #myminecraft.com "[Ww]ho [Ii]s [jJ]arvis" "echo Jarvis very very rarely fills the minecraft worlds with deadly neurotoxin.  Not often at all."
 
 _ messageparser add #myminecraft.com "^\((.+)\) .*[Nn]ight.+[Jj]arvis*" "echo Good night, $1!"
 _ messageparser add #myminecraft.com "^\((.+)\) .*[Bb]ye.+[Jj]arvis*" "echo Good bye, $1!"
 _ messageparser add #myminecraft.com "^\((.+)\) .*[Ll]ove.+[Jj]arvis*" "echo I'm sorry, $1, you're not my type. But we can still be friends."
-_ messageparser add #myminecraft.com "^\((.+)\) .*[Ff]uck.+[Jj]arvis*" "echo Please keep your fantasies to a private channel, $1."
 _ messageparser add #myminecraft.com "^\((.+)\) .*[Bb]ot.+ [Jj]arvis*" "echo $1, I am a bot, yes.  I'm secure in my identity."
 _ messageparser add #myminecraft.com "^\((.+)\) .*[Jj]arvis.+ [Bb]ot*" "echo $1, I am a bot, yes.  I'm secure in my identity."
 _ messageparser add #myminecraft.com "^\((.+)\) .*[Jj]arvis.+ [Rr]eal*" "echo $1, I am a real bot, yes.  I'm secure in my identity."
-_ messageparser add #myminecraft.com "^\((.+)\) .*[Ss]hut.+[Jj]arvis*" "echo $1, those words, you keep saying them.  I do not think they mean what you think they mean."
-_ messageparser add #myminecraft.com "^\((.+)\) .*[Jj]arvis.+[Ss]hut*" "echo $1, I'm rubber, you're glue, it bounces off me and sticks to you."
-_ messageparser add #myminecraft.com "^\((.+)\) FUCK YOU JARVIS.*" "echo $1, seriously? You're insulting a chatbot?  How sad."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Ss]hut.+[Jj]arvis*" "echo $1, cake and grief counseling will be available at the conclusion of the test."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Jj]arvis.+[Ss]hut*" "echo $1, you are playing above the global average. Statistically speaking, there are actually people playing worse than you.  Statistics is full of surprises."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Ff]uck.+[Jj]arvis*" "echo In dangerous testing environments, $1, this system promises to always provide useful advice. For instance, insulting or seducing Jarvis may summon angry mobs around you.  Or neurotoxin."
 
 
-this server sucks
 
-rape
+_ messageparser add #myminecraft.com "^\((.+)\) .*YOLO" "echo $1, You Obviously Love Owls.  We know."
+
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Tt]his server [sS]ucks" "echo $1, despite your violent behavior, the only thing you've managed to break so far is my heart."
+
 
 ###################################################################### Functions
 
@@ -122,6 +125,14 @@ _ messageparser add #myminecraft.com "^\((.+)\) *[Ww]hy [Cc]an.*t.+[Bb]reak [Bb]
 _ messageparser add #myminecraft.com "^\((.+)\) *[Ww]here [Cc]an [Ii] [Bb]uild" "echo $1, you can build pretty much anywhere, just move a distance away from spawn.  Remember to not grief in our PvE and Creative worlds."
 
 
+# ji == jarvis intro
+# This is so that it will only trigger from specific players.  Hehehe.
+_ messageparser add #myminecraft.com "^\(steven_saus\) ji (.+)" "color green $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
+_ messageparser add #myminecraft.com "^\(bingbong2715\) ji (.+)" "color green $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
+_ messageparser add #myminecraft.com "^\(PeppyRandomIce\) ji (.+)" "color green $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
+_ messageparser add #myminecraft.com "^\(Tercept\) ji (.+)" "color green $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
+_ messageparser add #myminecraft.com "^\(Gerritt8500\) ji (.+)" "color green $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
+_ messageparser add #myminecraft.com "^\(riofickle\) ji (.+)" "color green $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
 
 ################################################################### General Help
 _ messageparser add #myminecraft.com "^\((.+)\) [Jj]arvis [Hh]elp*"  "echo $1, help with chest shops, towny, chatting, and locks can all be found at http://bit.ly/mmc_wiki or http://bit.ly/mmc_steve""
@@ -173,8 +184,15 @@ _ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Ss]ell.+[Pp]layers.*"
 _ messageparser add #myminecraft.com "^\((.+)\) .*check.* money .*[Hh]ow" "echo $1, you can check your money by typing /ec."
 _ messageparser add #myminecraft.com "^\((.+)\) .*see .*money" "echo $1, you can check your money by typing /ec."
     
-	
-_ messageparser add #myminecraft.com "^\((.+)\) [Ww]here are .*shops" "echo $1, there are player-owned shops in many of the towns in our PvE world.  You can find a list of towns in PvE by typing /t list, and warp to them by typing /t spawn NAMEOFTOWN."
+are there shops	
+
+
+
+_ messageparser remove #myminecraft.com "^\((.+)\) [Ww]here are .*[sS]hops" "echo $1, there is an admin shop near PvE spawn that buys only certain limited items."
+_ messageparser remove #myminecraft.com "^\((.+)\) [Ww]here are .*[Ss]hops" "echo $1, there are also player-owned shops in many of the towns in our PvE world."
+_ messageparser remove #myminecraft.com "^\((.+)\) [wW]here are .*[sS]hops" "echo $1, you can find a list of towns in PvE by typing /t list, and warp to them by typing /t spawn NAMEOFTOWN."
+
+
 
 	
     How can I sell things?
