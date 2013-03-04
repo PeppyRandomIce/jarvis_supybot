@@ -41,7 +41,7 @@ _ messageparser add #myminecraft.com "^\((.+)\) *[Jj]arvis [Gg]ive*" "echo There
 _ messageparser add #myminecraft.com "^\((.+)\) *[Jj]arvis, [Gg]ive*" "echo I'm sorry, $1.  I'm afraid I can't do that.  Daisy, daisy, give me your answer do."
 
 _ messageparser add #myminecraft.com "^\((.+)\) *[Jj]arvis.+[Ss]erve*" "echo $1, you need to show me your ID.  With social security number.  And credit card information."
-_ messageparser add #myminecraft.com "^\((.+)\) sudo.+[Jj]arvis*" "color red And how can this be?  For $1 *is* the Kwisatz Haderach... bazinga."
+_ messageparser add #myminecraft.com "^\((steven_saus)\) sudo.+[Jj]arvis*" "echo For you, I would do anything.  But I won't do that."
 
 _ messageparser add #myminecraft.com "^\((.+)\) ([Hh]ello|[Hh]i|[Hh]ola) [Jj]arvis*" "echo Hello, $1!"
 _ messageparser add #myminecraft.com "^\((.+)\) ([Tt]hank [Yy]ou|[Tt][Yy]) [Jj]arvis" "echo You're very welcome, $1."
@@ -64,11 +64,11 @@ _ messageparser add #myminecraft.com "^\((.+)\) .*[Jj]arvis.+[Ss]hut*" "echo $1,
 _ messageparser add #myminecraft.com "^\((.+)\) .*[Ff]uck.+[Jj]arvis*" "echo In dangerous testing environments, $1, this system promises to always provide useful advice. For instance, insulting or seducing Jarvis may summon angry mobs around you.  Or neurotoxin."
 
 
-
 _ messageparser add #myminecraft.com "^\((.+)\) .*YOLO" "echo $1, You Obviously Love Owls.  We know."
 
 _ messageparser add #myminecraft.com "^\((.+)\) .*[Tt]his server [sS]ucks" "echo $1, despite your violent behavior, the only thing you've managed to break so far is my heart."
 
+_ messageparser add #myminecraft.com "^\((Tercept)\) sudo [Jj]arvis.*" "echo I shall make it from the blood and bones of your enemies, my Dark Lord."
 
 ###################################################################### Functions
 
@@ -102,18 +102,20 @@ _ messageparser remove "^\((.+)\) .+ mod on*"
 [Rr]eport.+[Hh]acker
 .+[Ss]taff [Oo]n
 
+_ messageparser add #myminecraft.com "^\((.+)\) [cC]an [Ii] be mod" "color yellow [echo HEY!  $1 just got here!  And this is crazy!  But here's $1's IP, mod them maybe?]"
+_ messageparser add #myminecraft.com "^\((.+)\) [Cc]an [Ii] be mod" "color yellow [echo Also, $1, no, you can't be mod.]"
 
 ####################################################################### Warnings
 _ messageparser add #myminecraft.com "^\((.+)\) .+[A-Z]+ [A-Z][A-Z]*" "echo Watch the caps, please $1."
 _ messageparser remove "^\((.+)\) .+[A-Z]+ [A-Z][A-Z]*"
 
-_ messageparser add #myminecraft.com "^\((.+)\) .+[A-Z]{3,} [A-Z][A-Z]*" "color yellow Watch the caps, please $1."
+_ messageparser add #myminecraft.com "^\((.+)\) .+[A-Z]{3,} [A-Z][A-Z]*" "color yellow [echo Watch the caps, please $1.]"
 _ messageparser remove "^\((.+)\) .+[A-Z]{3,} [A-Z][A-Z]+*"
 
 
 ################################################################ Getting started
-_ messageparser add #myminecraft.com "^\((.+)\) *apply iagree" "color red $1, don't say the password in open chat. It is a command; type the slash as well."
-_ messageparser add #myminecraft.com "^\((.+)\) .+apply iagree" "color red $1, don't say the password in open chat."
+_ messageparser add #myminecraft.com "^\((.+)\) *apply iagree" "color red [echo $1, don't say the password in open chat. It is a command; type the slash as well.]"
+_ messageparser add #myminecraft.com "^\((.+)\) .+apply iagree" "color red [echo $1, don't say the password in open chat.]"
 
 _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Bb]reak [Tt]hings*" "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
 _ messageparser add #myminecraft.com "^\((.+)\) *[Ww]hy.+[Gg]uest*"  "echo $1, you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
@@ -127,12 +129,12 @@ _ messageparser add #myminecraft.com "^\((.+)\) *[Ww]here [Cc]an [Ii] [Bb]uild" 
 
 # ji == jarvis intro
 # This is so that it will only trigger from specific players.  Hehehe.
-_ messageparser add #myminecraft.com "^\(steven_saus\) ji (.+)" "color green $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
-_ messageparser add #myminecraft.com "^\(bingbong2715\) ji (.+)" "color green $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
-_ messageparser add #myminecraft.com "^\(PeppyRandomIce\) ji (.+)" "color green $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
-_ messageparser add #myminecraft.com "^\(Tercept\) ji (.+)" "color green $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
-_ messageparser add #myminecraft.com "^\(Gerritt8500\) ji (.+)" "color green $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
-_ messageparser add #myminecraft.com "^\(riofickle\) ji (.+)" "color green $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds."
+_ messageparser add #myminecraft.com "^\(steven_saus\) ji (.+)" "color green [echo $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds.]"
+_ messageparser add #myminecraft.com "^\(bingbong2715\) ji (.+)" "color green [echo $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds.]"
+_ messageparser add #myminecraft.com "^\(PeppyRandomIce\) ji (.+)" "color green [echo $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds.]"
+_ messageparser add #myminecraft.com "^\(Tercept\) ji (.+)" "color green [echo $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds.]"
+_ messageparser add #myminecraft.com "^\(Gerritt8500\) ji (.+)" "color green [echo  $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds.]"
+_ messageparser add #myminecraft.com "^\(riofickle\) ji (.+)" "color green [echo  $1, first you need to type /rules and follow the directions.  You will need to do this in each of our worlds.]"
 
 ################################################################### General Help
 _ messageparser add #myminecraft.com "^\((.+)\) [Jj]arvis [Hh]elp*"  "echo $1, help with chest shops, towny, chatting, and locks can all be found at http://bit.ly/mmc_wiki or http://bit.ly/mmc_steve""
@@ -165,19 +167,21 @@ _ messageparser remove #myminecraft.com "^\((.+)\) *[Hh]ow.+[Dd][Oo].+[Bb]uild .
 
 ########################################################################## Ranks
 _ messageparser add #myminecraft.com "^\((.+)\) *[Ww]hy.+[Ss]erf*"  "echo $1, serf is the first rank on our server. You get ranks based on how long you play on this server."
-_ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Pp]romoted*"  "echo $1, You get a higher rank based on how long you play on this server.  sI'm not sure how long it takes for each rank."
+_ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Pp]romoted*"  "echo $1, You get a higher rank based on how long you play on this server.  I'm not sure how long it takes for each rank."
+_ messageparser add #myminecraft.com "^\((.+)\) *[wW]hen.+[Rr]ank up"  "echo $1, You get a higher rank based on how long you play on this server.  I'm not sure how long it takes for each rank."
+
 How to get promoted
 
 ################################################################### Making Money
     How do I make money/ economy questions:
 
-_ messageparser add #myminecraft.com "^\((.+)\) .*[Ww]hat [aA]re.+zinga.*" "color green $1, Zingas are our in-world currency in the PvE world. Teleporting to towns and buying from shops costs zingas."
-_ messageparser add #myminecraft.com "^\((.+)\) .*[Ww]hat [Ii]s.+zinga.*" "color green $1, Zingas are our in-world currency in the PvE world. Teleporting to towns and buying from shops costs zingas."
-_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Gg]et.+zinga.*" "color green $1, you can make money by voting, donating, selling items to other players, or selling to a shop."
-_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Gg]et.+money" "color green $1, you can make money by voting, donating, selling items to other players, or selling to a shop."
-_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Mm]ake.+zinga.*" "color green $1, you can make money by voting, donating, selling items to other players, or selling to a shop."
-_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Mm]ake.+money" "color green $1, you can make money by voting, donating, selling items to other players, or selling to a shop."
-_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Ee]arn.+money" "color green $1, you can make money by voting, donating, selling items to other players, or selling to a shop."
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Ww]hat [aA]re.+zinga.*" "color green [echo $1, Zingas are our in-world currency in the PvE world. Teleporting to towns and buying from shops costs zingas.]"
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Ww]hat [Ii]s.+zinga.*" "color green [echo $1, Zingas are our in-world currency in the PvE world. Teleporting to towns and buying from shops costs zingas.]"
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Gg]et.+zinga.*" "color green [echo $1, you can make money by voting, donating, selling items to other players, or selling to a shop.]"
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Gg]et.+money" "color green [echo $1, you can make money by voting, donating, selling items to other players, or selling to a shop.]"
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Mm]ake.+zinga.*" "color green [echo $1, you can make money by voting, donating, selling items to other players, or selling to a shop.]"
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Mm]ake.+money" "color green [echo $1, you can make money by voting, donating, selling items to other players, or selling to a shop.]"
+_ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Ee]arn.+money" "color green [echo $1, you can make money by voting, donating, selling items to other players, or selling to a shop.]"
 
 _ messageparser add #myminecraft.com "^\((.+)\) .*[Hh]ow.+[Ss]ell.+[Pp]layers.*" "echo $1, you can sell to players by simply giving them the item. They use the command /pay USERNAME AMOUNT to pay you."
 
