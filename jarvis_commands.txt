@@ -88,10 +88,10 @@ _ messageparser add #myminecraft.com "[Mm]ini.*[Mm]ap ([Aa]llowed|[Oo]kay)" "You
 
 
 ######################################################################## Modreqs
-! Temporarily removed whilst modreq is borked.
-
+Mod Req (Readded ~Peppy~)
+_ messageparser add #myminecraft.com "^\((.+)\) .+ MOD *" "echo If you need a moderator, try using /modreq to request their attention." 
 _ messageparser add #myminecraft.com "^\((.+)\) .+ mod on*" "echo $1, if you need a moderator, try using /modreq to request their attention."
-_ messageparser remove "^\((.+)\) .+ mod on*"
+
 
 [Hh]ow.+[Gg]et [Mm]od
 [Cc]an.+[Bb]e [Mm]od
@@ -169,6 +169,7 @@ _ messageparser remove #myminecraft.com "^\((.+)\) *[Hh]ow.+[Dd][Oo].+[Bb]uild .
 _ messageparser add #myminecraft.com "^\((.+)\) *[Ww]hy.+[Ss]erf*"  "echo $1, serf is the first rank on our server. You get ranks based on how long you play on this server."
 _ messageparser add #myminecraft.com "^\((.+)\) *[Hh]ow.+[Pp]romoted*"  "echo $1, You get a higher rank based on how long you play on this server.  I'm not sure how long it takes for each rank."
 _ messageparser add #myminecraft.com "^\((.+)\) *[wW]hen.+[Rr]ank up"  "echo $1, You get a higher rank based on how long you play on this server.  I'm not sure how long it takes for each rank."
+_ messageparser add #myminecraft.com "^\((.+)\) *[Hh]i [Ii]m [Nn]ew" "color green [echo $1, first you need to type /rules and follow the directions. You will need to do this in each of our worlds.]" 
 
 How to get promoted
 
